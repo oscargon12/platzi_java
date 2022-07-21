@@ -19,19 +19,29 @@ public class _9Casting {
         System.out.println((double) a/b); //2.5  -  Se castea con el double, devuelve flotante
 
         double c = a/b; //2.0  -  El tipo de dato es float, pero hace la operacion como int
-        double d = (double) a/b; //2.5  -  Forsa a cumplir el casteo con double
+        double d = (double) a/b; //2.5  -  Forza a cumplir el casteo con double
 
         System.out.println(c); 
         System.out.println(d);
 
-        //Char si cabe en int
+        //Char si cabe en int Casteo Implicito
         char n = '1';
         int nI = n;
 
         System.out.println(nI);
 
+        //Casteo explicito
         //char no cabe en short, obliga a crear un casting
         short nS = (short) n;
         System.out.println(nS);
+
+        //Ejercicios
+        char ch = 'z';
+        int chI = ch;
+
+        int i = 250;
+        long iL = i;
+        short iS = (short) iL;
+        System.out.println(iS);
     }
 }
