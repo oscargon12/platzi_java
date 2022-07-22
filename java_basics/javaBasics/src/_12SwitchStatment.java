@@ -2,7 +2,7 @@ public class _12SwitchStatment {
     public static void main(String[] args) {
         String colorModeSelected = "Blue dark";
 
-        switch (colorModeSelected) {
+        switch (colorModeSelected) { // Los casos evaluan esta variable
             case "Light":
                 System.out.println("Activar modo light");
                 break;
