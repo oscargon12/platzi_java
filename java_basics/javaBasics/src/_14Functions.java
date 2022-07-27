@@ -6,7 +6,7 @@ public class _14Functions {
         double sphere1 = sphereArea(3); // 🔹
         System.out.println(sphere1);
 
-        double convert1 = convertToDollar(1000, "COP");
+        double convert1 = convertToDollar(1000, "COP"); // 🔺
         System.out.println(convert1);
     }
 
@@ -21,8 +21,20 @@ public class _14Functions {
         return calcSphereArea;
     }
 
-    public static double convertToDollar(double quantity, String currency) {
+    // JavaDocs
+    /**
+     * Desc: Función que segun una moneda, convierte una cantidad de dinero en
+     * dolares
+     * 
+     * @author Oscar Gonzalez
+     * @param quantity cantidad de dinero
+     * @param currency Tipo de moneda: solo COP y MXN
+     * @return quantity Devuelve la cantidad actualizada en dolares
+     */
 
+    public static double convertToDollar(double quantity, String currency) { // 🔺
+
+        // La funcion cmpara por medio de switch
         switch (currency) {
             case "MXN":
                 quantity *= 0.049;
