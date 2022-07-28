@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays; // 🔸 requerido para imprimir arrays
 
 public class _18Arrays {
@@ -31,11 +30,33 @@ public class _18Arrays {
         androidVersions[2] = "Cupcake";
         androidVersions[3] = "Donut";
 
-        System.out.println(androidVersions); // [Ljava.lang.String;@7344699f
-        System.out.println(Arrays.toString(androidVersions)); // 🔸 [Apple Pie, Banana bread, Cupcake, Donut, null...]
-        System.out.println(androidVersions[2]); // "cupcake"
+        // System.out.println(androidVersions); // [Ljava.lang.String;@7344699f
+        // System.out.println(Arrays.toString(androidVersions)); // 🔸 [Apple Pie,
+        // Banana bread, Cupcake, Donut, null...]
 
-        System.out.println("**  **");
+        for (int i = 0; i < androidVersions.length; i++) {
+            System.out.println(androidVersions[i]); // "cupcake"
+        }
+
+        System.out.println();
+        System.out.println("** Sin los null **");
+
+        for (int i = 0; i < androidVersions.length; i++) {
+            if (androidVersions[i] == null) {
+                continue;
+            }
+            System.out.println(androidVersions[i]);
+        }
+
+        System.out.println();
+        System.out.println("** For Each **");
+
+        for (String androidVersion : androidVersions) {
+            System.out.println(androidVersion);
+        }
+
+        System.out.println();
+        System.out.println("** EJEMPLO **");
 
         // Llenando matrices
         // Funciona como coordenadas
@@ -44,7 +65,13 @@ public class _18Arrays {
         cities[1][0] = "Colombia";
         cities[0][1] = "Bogota";
 
-        System.out.println(Arrays.toString(cities));
+        // ** For anidado **/
+        for (int i = 0; i < cities.length; i++) { // El primer for recorre las filas o renglones
+            for (int j = 0; j < cities[i].length; j++) { // El segundo recorre las columnas cities[i] es en si otro
+                                                         // array
+                System.out.println(cities[i][j]);
+            }
+        }
         /*
          * --------------------------
          * |Country | City |
@@ -56,10 +83,31 @@ public class _18Arrays {
          * --------------------------
          */
 
+        System.out.println();
+        System.out.println("** for each anidado **");
+        for (String[] pair : cities) {
+            for (String name : pair) {
+                System.out.println(name);
+            }
+        }
+
+        System.out.println();
+        System.out.println("** muchas dimensiones (monkey) **");
+
         // Ubicar al chango
         String[][][][] animals = new String[2][3][2][2]; // Se define las longitudes del array
         animals[1][0][0][1] = "monkey";
 
         System.out.println(animals[1][0][0][1]);
+
+        for (int i = 0; i <= 1; i++) {
+            for (int j = 0; j <= 0; j++) {
+                for (int k = 0; k <= 0; k++) {
+                    for (int l = 0; l <= 1; l++) {
+                        System.out.println(animals[i][j][k][l]);
+                    }
+                }
+            }
+        }
     }
 }
